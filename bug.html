@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text is initially visible.
+  </div>
+  <button onclick="myFunction()">Click Me</button>
+
+  <script>
+    function myFunction() {
+      document.getElementById("myDiv").innerHTML = "This text replaces the original text.";
+      // Missing crucial step: Removing the event listener to prevent repeated execution 
+      // Adding the event listener again will trigger an infinite loop when the button is clicked again
+    }
+  </script>
+</body>
+</html>
