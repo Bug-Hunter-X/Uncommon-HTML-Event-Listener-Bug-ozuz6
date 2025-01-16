@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Corrected HTML Code</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text is initially visible.
+  </div>
+  <button onclick="myFunction()">Click Me</button>
+
+  <script>
+    function myFunction() {
+      document.getElementById("myDiv").innerHTML = "This text replaces the original text.";
+       // Remove the existing event listener before adding a new one to prevent infinite loops.
+       let button = document.querySelector('button');
+       button.removeEventListener('click', myFunction);
+       button.addEventListener('click', myFunction);
+    }
+  </script>
+</body>
+</html>
